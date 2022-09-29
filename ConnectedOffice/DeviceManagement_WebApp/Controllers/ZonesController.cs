@@ -12,6 +12,16 @@ namespace DeviceManagement_WebApp.Controllers
 {
     public class ZonesController : Controller
     {
+
+        public async Task<IActionResult> Index()
+        {
+            ZonesRepository ZonesRepository = new ZonesRepository();
+
+            var results = ZonesRepository.Getall();
+
+            return View(results);
+        }
+
         private readonly ConnectedOfficeContext _context;
 
         public ZonesController(ConnectedOfficeContext context)
@@ -19,11 +29,13 @@ namespace DeviceManagement_WebApp.Controllers
             _context = context;
         }
 
+
+
         // GET: Zones
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Zone.ToListAsync());
-        }
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.Zone.ToListAsync());
+       // }
 
         // GET: Zones/Details/5
         public async Task<IActionResult> Details(Guid? id)

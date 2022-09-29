@@ -22,8 +22,11 @@ namespace DeviceManagement_WebApp.Controllers
         // GET: Devices
         public async Task<IActionResult> Index()
         {
-            var connectedOfficeContext = _context.Device.Include(d => d.Category).Include(d => d.Zone);
-            return View(await connectedOfficeContext.ToListAsync());
+            DevicesRepository DevicesRepository = new DevicesRepository();
+
+            var results = DevicesRepository.Getall();
+
+            return View(results);
         }
 
         // GET: Devices/Details/5

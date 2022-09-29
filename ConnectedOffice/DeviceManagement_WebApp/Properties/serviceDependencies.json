@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "jdbc:sqlserver://project3cmpg323.database.windows.net:1433;database=db34341498;user=admin323@project3cmpg323;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;",
+      "dynamicId": null
+    }
+  }
+}
